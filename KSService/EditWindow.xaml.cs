@@ -10,31 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace KSService
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EditWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EditWindow : Window
     {
-        public MainWindow()
+        public EditWindow()
         {
             InitializeComponent();
         }
 
-        public void OnLandscapeItemSelected(object sender, MouseButtonEventArgs e)
+        private void OnWindowsClosed(object sender, EventArgs e)
         {
-            new EditWindow().Show();
-            this.Close();
-        }
 
-        public void OnPortraitItemSelected(object sender, RoutedEventArgs e)
-        {
-            new EditWindow().Show();
-            this.Close();
         }
     }
 }
