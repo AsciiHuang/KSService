@@ -1,0 +1,26 @@
+﻿<Window x:Class="KSService.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="KSService" Height="400" Width="800" Background="White" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock FontSize="14">　選擇版型建立新檔案，或</TextBlock>
+            <Button Margin="10,0,0,0">
+                <TextBlock>　　開啟 KSService 專案檔　　</TextBlock>
+            </Button>
+            <TextBlock FontSize="14">　進行修改</TextBlock>
+        </StackPanel>
+        <ListView Grid.Row="1">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            
+        </ListView>
+    </Grid>
+</Window>
