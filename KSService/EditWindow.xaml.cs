@@ -19,8 +19,16 @@ namespace KSService
     /// </summary>
     public partial class EditWindow : Window
     {
+        private Constants.LayoutType type = Constants.LayoutType.Landscape_Full;
+
         public EditWindow()
         {
+            InitializeComponent();
+        }
+
+        public EditWindow(Constants.LayoutType type)
+        {
+            this.type = type;
             InitializeComponent();
         }
 
