@@ -8,40 +8,40 @@
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Grid Width="400" Height="225">
+            <!--<Grid Width="400" Height="225">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" Background="#555555">
+                <Button Grid.Column="0" Background="#555555">
                     <TextBlock Grid.Row="0" VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                </Grid>
+                </Button>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" Background="#666666">
+                    <Button Grid.Row="0" Background="#666666">
                         <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                    </Grid>
-                    <Grid Grid.Row="1" Background="#777777">
+                    </Button>
+                    <Button Grid.Row="1" Background="#777777">
                         <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                    </Grid>
+                    </Button>
                 </Grid>
             </Grid>
             <Grid Width="400" Height="225">
@@ -49,59 +49,59 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" Background="#555555">
+                <Button Grid.Column="0" Background="#555555">
                     <TextBlock Grid.Row="0" VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                </Grid>
+                </Button>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0" Background="#666666">
+                    <Button Grid.Row="0" Background="#666666">
                         <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                    </Grid>
-                    <Grid Grid.Row="1" Background="#777777">
+                    </Button>
+                    <Button Grid.Row="1" Background="#777777">
                         <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                    </Grid>
-                    <Grid Grid.Row="2" Background="#888888">
+                    </Button>
+                    <Button Grid.Row="2" Background="#888888">
                         <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                    </Grid>
+                    </Button>
                 </Grid>
             </Grid>
             <Grid Width="400" Height="225" Background="#555555">
-                <TextBlock FontSize="20" 
+                <Button Background="#555555">
+                    <TextBlock FontSize="20" 
                                    Text="圖片、影片"
                                    TextAlignment="Center"
                                    VerticalAlignment="Center"
-                                   Foreground="white"
-                                   Background="#555555"/>
-                <TextBlock VerticalAlignment="Bottom" 
-                                   FontSize="10" 
-                                   Text="文字跑馬燈~文字跑馬燈~文字跑馬燈~" 
+                                   Foreground="white"/>
+                </Button>
+                <Button FontSize="10" 
+                                   Content="文字跑馬燈~文字跑馬燈~文字跑馬燈~" 
                                    Foreground="Pink"
-                                   Padding="5"
-                                   Background="#333333"/>
+                                   Padding="5" Background="#333333"
+                                   VerticalAlignment="Bottom"/>
             </Grid>
             <Grid Width="400" Height="225" Background="#555555">
                 <Grid.RowDefinitions>
@@ -113,43 +113,43 @@
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0" Background="#555555">
+                    <Button Grid.Column="0" Background="#555555">
                         <TextBlock Grid.Row="0" VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                    </Grid>
+                    </Button>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" Background="#666666">
+                        <Button Grid.Row="0" Background="#666666">
                             <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                        </Grid>
-                        <Grid Grid.Row="1" Background="#777777">
+                        </Button>
+                        <Button Grid.Row="1" Background="#777777">
                             <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                        </Grid>
+                        </Button>
                     </Grid>
                 </Grid>
-                <TextBlock Grid.Row="1" VerticalAlignment="Bottom" 
+                <Button Grid.Row="1"  VerticalAlignment="Bottom"
                                    FontSize="10" 
-                                   Text="文字跑馬燈~文字跑馬燈~文字跑馬燈~" 
+                                   Content="文字跑馬燈~文字跑馬燈~文字跑馬燈~" 
                                    Foreground="Pink"
                                    Padding="5"
-                                   Background="#333333"/>
+                            Background="#333333"/>
             </Grid>
             <Grid Width="400" Height="225" Background="#555555">
                 <Grid.RowDefinitions>
@@ -161,35 +161,35 @@
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0" Background="#555555">
+                    <Button Grid.Column="0" Background="#555555">
                         <TextBlock Grid.Row="0" VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                    </Grid>
+                    </Button>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" Background="#666666">
+                        <Button Grid.Row="0" Background="#666666">
                             <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                        </Grid>
-                        <Grid Grid.Row="1" Background="#777777">
+                        </Button>
+                        <Button Grid.Row="1" Background="#777777">
                             <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
                                            Text="圖片、影片" 
                                            Foreground="white"
                                            Padding="5"/>
-                        </Grid>
+                        </Button>
                     </Grid>
                 </Grid>
                 <Button Grid.Row="1" VerticalAlignment="Bottom" 
@@ -199,10 +199,141 @@
                         Foreground="Pink"
                         Padding="5"
                         Background="#333333"/>
+            </Grid>-->
+            <Grid Width="126" Height="224" Background="#555555">
+                <Button>
+                <TextBlock FontSize="20" 
+                                   Text="圖片、影片"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="white"
+                                   Background="#555555"/>
+                </Button>
             </Grid>
+            <!--<Grid Width="126" Height="224" Background="#555555">
+                <Button Background="#555555">
+                <TextBlock FontSize="20" 
+                                   Text="圖片、影片"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="white"/>
+                </Button>
+                <Button Background="#333333" VerticalAlignment="Top">
+                <TextBlock FontSize="10" 
+                                   Text="文字跑馬燈~" 
+                                   Foreground="Pink"
+                                   Padding="5"/>
+                </Button>
+            </Grid>-->
+            <!--<Grid Width="126" Height="224">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Background="#666666">
+                    <TextBlock VerticalAlignment="Center" 
+                                           TextAlignment="Center"
+                                           FontSize="20" 
+                                           Text="圖片、影片" 
+                                           Foreground="white"
+                                           Padding="5"/>
+                </Button>
+                <Grid Grid.Row="1">
+                    <Button Background="#777777">
+                        <TextBlock VerticalAlignment="Center" 
+                                           TextAlignment="Center"
+                                           FontSize="20" 
+                                           Text="圖片、影片" 
+                                           Foreground="white"
+                                           Padding="5"/>
+                    </Button>
+                    <Button VerticalAlignment="Top" 
+                                   FontSize="10" 
+                                   Content="文字跑馬燈~" 
+                                   Foreground="Pink"
+                                   Padding="5"
+                                   Background="#333333"/>
+                </Grid>
+            </Grid>-->
+            <!--<Grid Width="126" Height="224">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Background="#555555">
+                    <TextBlock VerticalAlignment="Center" 
+                                           TextAlignment="Center"
+                                           FontSize="20" 
+                                           Text="圖片、影片" 
+                                           Foreground="white"
+                                           Padding="5"/>
+                </Button>
+                <Button Grid.Row="1" Background="#666666">
+                    <TextBlock VerticalAlignment="Center" 
+                                           TextAlignment="Center"
+                                           FontSize="20" 
+                                           Text="圖片、影片" 
+                                           Foreground="white"
+                                           Padding="5"/>
+                </Button>
+                <Button Grid.Row="2" Background="#777777">
+                    <TextBlock VerticalAlignment="Center" 
+                                           TextAlignment="Center"
+                                           FontSize="20" 
+                                           Text="圖片、影片" 
+                                           Foreground="white"
+                                           Padding="5"/>
+                </Button>
+            </Grid>-->
+            <!--<Grid Width="126" Height="224">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Background="#555555">
+                    <TextBlock VerticalAlignment="Center" 
+                                           TextAlignment="Center"
+                                           FontSize="20" 
+                                           Text="圖片、影片" 
+                                           Foreground="white"
+                                           Padding="5"/>
+                </Button>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Background="#666666">
+                        <TextBlock VerticalAlignment="Center" 
+                                       TextAlignment="Center"
+                                       FontSize="10" 
+                                       Text="圖片、影片" 
+                                       Foreground="white"
+                                       Padding="5"/>
+                    </Button>
+                    <Button Grid.Column="1" Background="#777777">
+                        <TextBlock VerticalAlignment="Center" 
+                                       TextAlignment="Center"
+                                       FontSize="10" 
+                                       Text="圖片、影片" 
+                                       Foreground="white"
+                                       Padding="5"/>
+                    </Button>
+                </Grid>
+                <Button Grid.Row="2" Background="#777777">
+                    <TextBlock VerticalAlignment="Center" 
+                                           TextAlignment="Center"
+                                           FontSize="20" 
+                                           Text="圖片、影片" 
+                                           Foreground="white"
+                                           Padding="5"/>
+                </Button>
+            </Grid>-->
         </Grid>
         <Grid Grid.Row="1">
-            
+
         </Grid>
     </Grid>
 </Window>
