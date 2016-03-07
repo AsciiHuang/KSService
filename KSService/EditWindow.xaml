@@ -8,7 +8,7 @@
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <!--<Grid Width="400" Height="225">
+            <Grid Width="400" Height="225">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="1*"/>
@@ -44,7 +44,7 @@
                     </Button>
                 </Grid>
             </Grid>
-            <Grid Width="400" Height="225">
+            <!--<Grid Width="400" Height="225">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="1*"/>
@@ -88,8 +88,8 @@
                                            Padding="5"/>
                     </Button>
                 </Grid>
-            </Grid>
-            <Grid Width="400" Height="225" Background="#555555">
+            </Grid>-->
+            <!--<Grid Width="400" Height="225" Background="#555555">
                 <Button Background="#555555">
                     <TextBlock FontSize="20" 
                                    Text="圖片、影片"
@@ -102,8 +102,8 @@
                                    Foreground="Pink"
                                    Padding="5" Background="#333333"
                                    VerticalAlignment="Bottom"/>
-            </Grid>
-            <Grid Width="400" Height="225" Background="#555555">
+            </Grid>-->
+            <!--<Grid Width="400" Height="225" Background="#555555">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="23"/>
@@ -150,8 +150,8 @@
                                    Foreground="Pink"
                                    Padding="5"
                             Background="#333333"/>
-            </Grid>
-            <Grid Width="400" Height="225" Background="#555555">
+            </Grid>-->
+            <!--<Grid Width="400" Height="225" Background="#555555">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="23"/>
@@ -200,16 +200,15 @@
                         Padding="5"
                         Background="#333333"/>
             </Grid>-->
-            <Grid Width="126" Height="224" Background="#555555">
-                <Button>
+            <!--<Grid Width="126" Height="224" Background="#555555">
+                <Button Background="#555555">
                 <TextBlock FontSize="20" 
                                    Text="圖片、影片"
                                    TextAlignment="Center"
                                    VerticalAlignment="Center"
-                                   Foreground="white"
-                                   Background="#555555"/>
+                                   Foreground="white"/>
                 </Button>
-            </Grid>
+            </Grid>-->
             <!--<Grid Width="126" Height="224" Background="#555555">
                 <Button Background="#555555">
                 <TextBlock FontSize="20" 
@@ -333,7 +332,59 @@
             </Grid>-->
         </Grid>
         <Grid Grid.Row="1">
-
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock FontSize="14">跑馬燈文字 :　</TextBlock>
+                    <TextBox FontSize="14" Width="460"></TextBox>
+                </StackPanel>
+                <ListView Grid.Row="1" ItemsSource="{Binding ItemsSource}" SelectionChanged="OnMediaDataItemSelected"/>
+            </Grid>
+            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
+                <TextBlock Text="類型"/>
+                <ComboBox x:Name="combo_type">
+                    <ComboBoxItem>圖片</ComboBoxItem>
+                    <ComboBoxItem>影片</ComboBoxItem>
+                </ComboBox>
+                <TextBlock Text="播放長度" Margin="0,20,0,0"/>
+                <ComboBox x:Name="combo_duration">
+                    <ComboBoxItem>5 秒</ComboBoxItem>
+                    <ComboBoxItem>10 秒</ComboBoxItem>
+                    <ComboBoxItem>15 秒</ComboBoxItem>
+                    <ComboBoxItem>20 秒</ComboBoxItem>
+                    <ComboBoxItem>25 秒</ComboBoxItem>
+                    <ComboBoxItem>30 秒</ComboBoxItem>
+                    <ComboBoxItem>35 秒</ComboBoxItem>
+                    <ComboBoxItem>40 秒</ComboBoxItem>
+                    <ComboBoxItem>45 秒</ComboBoxItem>
+                    <ComboBoxItem>50 秒</ComboBoxItem>
+                    <ComboBoxItem>55 秒</ComboBoxItem>
+                    <ComboBoxItem>60 秒</ComboBoxItem>
+                    <ComboBoxItem>無限</ComboBoxItem>
+                </ComboBox>
+                <TextBlock Text="重播次數" Margin="0,20,0,0"/>
+                <ComboBox x:Name="combo_repeat">
+                    <ComboBoxItem>1 次</ComboBoxItem>
+                    <ComboBoxItem>2 次</ComboBoxItem>
+                    <ComboBoxItem>3 次</ComboBoxItem>
+                    <ComboBoxItem>4 次</ComboBoxItem>
+                    <ComboBoxItem>5 次</ComboBoxItem>
+                    <ComboBoxItem>無限</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Vertical">
+                <Button Content="新增" Padding="10" Margin="10" Click="OnAddButtonClicked"/>
+                <Button Content="刪除" Padding="10" Margin="10" Click="OnDeleteButtonClicked"/>
+                <Button Content="存檔" Padding="10" Margin="10" Click="OnSaveButtonClicked"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
