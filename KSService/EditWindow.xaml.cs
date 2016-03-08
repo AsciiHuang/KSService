@@ -83,5 +83,52 @@ namespace KSService
             combo_duration.SelectedIndex = 0;
             combo_repeat.SelectedIndex = 0;
         }
+
+        #region Button Click Handler
+        private void OnTLButtonClicked(object sender, RoutedEventArgs e)
+        {
+            model.SwitchToMediaLayoutPosition(Constants.MediaLayoutPosition.TL);
+        }
+
+        private void OnTCButtonClicked(object sender, RoutedEventArgs e)
+        {
+            model.SwitchToMediaLayoutPosition(Constants.MediaLayoutPosition.TC);
+        }
+
+        private void OnTRButtonClicked(object sender, RoutedEventArgs e)
+        {
+            model.SwitchToMediaLayoutPosition(Constants.MediaLayoutPosition.TR);
+        }
+
+        private void OnCLButtonClicked(object sender, RoutedEventArgs e)
+        {
+            model.SwitchToMediaLayoutPosition(Constants.MediaLayoutPosition.CL);
+        }
+
+        private void OnCCButtonClicked(object sender, RoutedEventArgs e)
+        {
+            model.SwitchToMediaLayoutPosition(Constants.MediaLayoutPosition.CC);
+        }
+        
+        private void OnCRButtonClicked(object sender, RoutedEventArgs e)
+        {
+            model.SwitchToMediaLayoutPosition(Constants.MediaLayoutPosition.CR);
+        }
+
+        private void OnBLButtonClicked(object sender, RoutedEventArgs e)
+        {
+            model.SwitchToMediaLayoutPosition(Constants.MediaLayoutPosition.BL);
+        }
+
+        private void OnBCButtonClicked(object sender, RoutedEventArgs e)
+        {
+            model.SwitchToMediaLayoutPosition(Constants.MediaLayoutPosition.BC);
+        }
+
+        private void OnBRButtonClicked(object sender, RoutedEventArgs e)
+        {
+            model.SwitchToMediaLayoutPosition(Constants.MediaLayoutPosition.BR);
+        }
+        #endregion
     }
 }

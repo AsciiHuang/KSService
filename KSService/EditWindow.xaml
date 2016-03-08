@@ -13,7 +13,7 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Background="#555555">
+                <Button Grid.Column="0" Background="#555555" Click="OnCLButtonClicked">
                     <TextBlock Grid.Row="0" VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
@@ -26,7 +26,7 @@
                         <RowDefinition Height="2*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Button Grid.Row="0" Background="#666666">
+                    <Button Grid.Row="0" Background="#666666" Click="OnTRButtonClicked">
                         <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
@@ -34,7 +34,7 @@
                                            Foreground="white"
                                            Padding="5"/>
                     </Button>
-                    <Button Grid.Row="1" Background="#777777">
+                    <Button Grid.Row="1" Background="#777777" Click="OnBRButtonClicked">
                         <TextBlock VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 

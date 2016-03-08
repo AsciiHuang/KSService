@@ -22,5 +22,26 @@ namespace KSService
             Portrait_T1_C1_B1, 
             Portrait_T1_C1_CL1_CR1_B1, 
         }
+
+        public enum MediaType
+        {
+            Photo, Video, 
+        }
+
+        public enum MediaLayoutPosition
+        {
+            Default, 
+            TL, TC, TR, 
+            CL, CC, CR, 
+            BL, BC, BR, 
+        }
+
+        public enum MarqueeLayoutPosition
+        {
+            Default, 
+            MT, 
+            MC, 
+            MB, 
+        }
     }
 }
