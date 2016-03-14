@@ -9,14 +9,8 @@ namespace KSService
 {
     public class MediaData : INotifyPropertyChanged
     {
-        public enum DataType
-        {
-            Photo,
-            Video,
-        }
-
-        private DataType type = DataType.Photo;
-        public DataType Type
+        private Constants.MediaType type = Constants.MediaType.None;
+        public Constants.MediaType Type
         {
             get
             {
@@ -34,7 +28,14 @@ namespace KSService
         {
             get
             {
-                return path;
+                String resStr = "點選編輯新的 圖片 或 影片參數";
+
+                if (!String.IsNullOrEmpty(path))
+                {
+                    resStr = path;
+                }
+
+                return resStr;
             }
             set
             {
@@ -43,8 +44,22 @@ namespace KSService
             }
         }
 
-        private Int32 duration = 0;
-        public Int32 Duration
+        private String internalPath = "";
+        public String InternalPath
+        {
+            get
+            {
+                return internalPath;
+            }
+            set
+            {
+                internalPath = value;
+                NotifyPropertyChanged("InternalPath");
+            }
+        }
+
+        private Constants.MediaDuration duration = Constants.MediaDuration.None;
+        public Constants.MediaDuration Duration
         {
             get
             {
@@ -57,8 +72,8 @@ namespace KSService
             }
         }
 
-        private Int32 repeat = 0;
-        public Int32 Repeat
+        private Constants.MediaRepeat repeat = Constants.MediaRepeat.None;
+        public Constants.MediaRepeat Repeat
         {
             get
             {

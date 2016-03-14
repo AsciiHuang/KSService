@@ -1,17 +1,19 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace KSService
 {
     public class EditModel : INotifyPropertyChanged
     {
-        private Constants.MediaLayoutPosition currentMediaLayoutPosition = Constants.MediaLayoutPosition.Default;
-        private Constants.MarqueeLayoutPosition currentMarqueeLayoutPosition = Constants.MarqueeLayoutPosition.Default;
+        private Constants.MediaLayoutPosition currentMediaLayoutPosition = Constants.MediaLayoutPosition.None;
         private Int32 currentIndex = -1;
 
         private List<MediaData> tLItems = new List<MediaData>();
@@ -26,9 +28,7 @@ namespace KSService
         private List<MediaData> bCItems = new List<MediaData>();
         private List<MediaData> bRItems = new List<MediaData>();
 
-        private Marquee mTItem = new Marquee();
-        private Marquee mCItem = new Marquee();
-        private Marquee mBItem = new Marquee();
+        private Marquee MarqueeItem = new Marquee();
 
         private ObservableCollection<MediaData> itemsSource = new ObservableCollection<MediaData>();
         public ObservableCollection<MediaData> ItemsSource
@@ -50,8 +50,6 @@ namespace KSService
 
         public void AddMediaData()
         {
-            //itemsSource.Add("點選編輯新的 圖片 或 影片參數");
-            //itemsSource.Add(new MediaData());
             List<MediaData> currentItems = getCurrentItems();
             if (currentItems != null)
             {
@@ -65,7 +63,7 @@ namespace KSService
         {
             currentMediaLayoutPosition = position;
             itemsSource.Clear();
-            if (Constants.MediaLayoutPosition.Default != currentMediaLayoutPosition)
+            if (Constants.MediaLayoutPosition.None != currentMediaLayoutPosition)
             {
                 List<MediaData> items = getCurrentItems();
                 if (items != null)
@@ -79,26 +77,157 @@ namespace KSService
             NotifyPropertyChanged("ItemsSource");
         }
 
-        public void UpdateMediaType(Constants.MediaType type, String path)
+        public void DeleteCurrentIndex()
         {
             if (currentIndex != -1)
             {
                 List<MediaData> currentItems = getCurrentItems();
-                if (currentIndex != null && currentItems.Count > currentIndex)
+                if (currentIndex != -1 && currentItems != null && currentItems.Count > currentIndex)
                 {
-                    
+                    currentItems.RemoveAt(currentIndex);
+                    itemsSource.RemoveAt(currentIndex);
+                    NotifyPropertyChanged("ItemsSource");
                 }
             }
         }
 
-        public void UpdateMediaDuration(Int32 duration)
+        public MediaData GetCurrentMediaData()
         {
+            MediaData data = null;
 
+            List<MediaData> datas = getCurrentItems();
+            if (currentIndex != -1 && datas != null && datas.Count > currentIndex)
+            {
+                data = datas[currentIndex];
+            }
+
+            return data;
         }
 
-        public void UpdateMediaRepeat(Int32 repeat)
+        public void UpdateCurrentIndex(int index)
         {
+            currentIndex = index;
+        }
 
+        public void UpdateMediaType(Constants.MediaType type)
+        {
+            if (currentIndex != -1)
+            {
+                List<MediaData> currentItems = getCurrentItems();
+                if (currentIndex != -1 && currentItems != null && currentItems.Count > currentIndex)
+                {
+                    currentItems[currentIndex].Type = type;
+                }
+            }
+        }
+
+        public void UpdateMediaPath(String path, String internalPath)
+        {
+            if (currentIndex != -1)
+            {
+                List<MediaData> currentItems = getCurrentItems();
+                if (currentIndex != -1 && currentItems != null && currentItems.Count > currentIndex)
+                {
+                    currentItems[currentIndex].Path = path;
+                    itemsSource[currentIndex].Path = path;
+                    itemsSource[currentIndex].InternalPath = internalPath;
+                    NotifyPropertyChanged("ItemsSource");
+                }
+            }
+        }
+
+        public void UpdateMediaDuration(Constants.MediaDuration duration)
+        {
+            if (currentIndex != -1)
+            {
+                List<MediaData> currentItems = getCurrentItems();
+                if (currentIndex != -1 && currentItems != null && currentItems.Count > currentIndex)
+                {
+                    currentItems[currentIndex].Duration = duration;
+                }
+            }
+        }
+
+        public void UpdateMediaRepeat(Constants.MediaRepeat repeat)
+        {
+            if (currentIndex != -1)
+            {
+                List<MediaData> currentItems = getCurrentItems();
+                if (currentIndex != -1 && currentItems != null && currentItems.Count > currentIndex)
+                {
+                    currentItems[currentIndex].Repeat = repeat;
+                }
+            }
+        }
+
+        public void UpdateMarequeeData(String content)
+        {
+            MarqueeItem.Content = content;
+        }
+
+        public void UpdateMarequeeTextColor(String color)
+        {
+            MarqueeItem.FontColor = color;
+        }
+
+        public void UpdateMarequeeBackgroundColor(String color)
+        {
+            MarqueeItem.Background = color;
+        }
+
+        public JObject GetJSONObject()
+        {
+            JObject resObj = new JObject();
+
+            JArray tlArray = getMediaDataJSONArray(tLItems);
+            JArray tcArray = getMediaDataJSONArray(tCItems);
+            JArray trArray = getMediaDataJSONArray(tRItems);
+            JArray clArray = getMediaDataJSONArray(cLItems);
+            JArray ccArray = getMediaDataJSONArray(cCItems);
+            JArray crArray = getMediaDataJSONArray(cRItems);
+            JArray blArray = getMediaDataJSONArray(bLItems);
+            JArray bcArray = getMediaDataJSONArray(bCItems);
+            JArray brArray = getMediaDataJSONArray(bRItems);
+
+            resObj.Add("TL", tlArray);
+            resObj.Add("TC", tcArray);
+            resObj.Add("TR", trArray);
+            resObj.Add("CL", clArray);
+            resObj.Add("CC", ccArray);
+            resObj.Add("CR", crArray);
+            resObj.Add("BL", blArray);
+            resObj.Add("BC", bcArray);
+            resObj.Add("BR", brArray);
+
+            JObject mtObj = new JObject();
+            mtObj.Add("Text", MarqueeItem.Content);
+            mtObj.Add("Background", MarqueeItem.Background);
+            mtObj.Add("FontColor", MarqueeItem.FontColor);
+
+            resObj.Add("Marquee", mtObj);
+
+            return resObj;
+        }
+
+        private JArray getMediaDataJSONArray(List<MediaData> datas)
+        {
+            JArray resArray = new JArray();
+
+            foreach (MediaData data in datas)
+            {
+                if (!String.IsNullOrEmpty(data.Path))
+                {
+                    JObject dataObj = new JObject();
+                    dataObj.Add("Type", data.Type.ToString());
+                    dataObj.Add("Path", data.Path.ToString());
+                    dataObj.Add("InternalPath", data.InternalPath.ToString());
+                    dataObj.Add("Duration", data.Duration.ToString());
+                    dataObj.Add("Repeat", data.Repeat.ToString());
+                    resArray.Add(dataObj);
+                }
+            }
+
+            return resArray;
         }
 
         private List<MediaData> getCurrentItems()

@@ -16,6 +16,8 @@ namespace KSService
             Landscape_Full_BottomMarquee, 
             Landscape_BottomMarquee_L1_R11, 
             Landscape_BottomMarquee_L1_R21, 
+            Landscape_L1_C1_R1, 
+            Landscape_BottomMarquee_L1_C1_R1, 
             Portrait_Full, 
             Portrait_Full_TopMarquee, 
             Portrait_CenterMarquee_T1_B3,
@@ -25,23 +27,44 @@ namespace KSService
 
         public enum MediaType
         {
-            Photo, Video, 
+            None, Photo, Video, 
+        }
+
+        public enum MediaDuration
+        {
+            None, 
+            Second5, 
+            Second10, 
+            Second15, 
+            Second20, 
+            Second25,
+            Second30,
+            Second35,
+            Second40,
+            Second45,
+            Second50,
+            Second55,
+            Second60,
+            Unlimited, 
+        }
+
+        public enum MediaRepeat
+        {
+            None,
+            Repeat1,
+            Repeat2,
+            Repeat3,
+            Repeat4,
+            Repeat5, 
+            Unlimited, 
         }
 
         public enum MediaLayoutPosition
         {
-            Default, 
+            None, 
             TL, TC, TR, 
             CL, CC, CR, 
             BL, BC, BR, 
-        }
-
-        public enum MarqueeLayoutPosition
-        {
-            Default, 
-            MT, 
-            MC, 
-            MB, 
         }
     }
 }

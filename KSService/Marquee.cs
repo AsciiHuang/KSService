@@ -11,22 +11,22 @@ namespace KSService
     public class Marquee : INotifyPropertyChanged
     {
 
-        private String text = "";
-        public String Text
+        private String content = "";
+        public String Content
         {
             get
             {
-                return text;
+                return content;
             }
             set
             {
-                text = value;
-                NotifyPropertyChanged("Text");
+                content = value;
+                NotifyPropertyChanged("Content");
             }
         }
 
-        private Color background = Colors.White;
-        public Color Background
+        private String background ="#000000";
+        public String Background
         {
             get
             {
@@ -39,8 +39,8 @@ namespace KSService
             }
         }
 
-        private Color fontColor = Colors.White;
-        public Color FontColor
+        private String fontColor = "#FFFFFF";
+        public String FontColor
         {
             get
             {

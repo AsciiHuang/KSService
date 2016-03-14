@@ -1,0 +1,31 @@
+﻿{
+    "TL": [
+        {
+            "Type": "value",
+            "Path": "value",
+            "InternalPath": "value",
+            "Duration": "value",
+            "Repeat": "value"
+        },
+        {
+            "Type": "value",
+            "Path": "value",
+            "InternalPath": "value",
+            "Duration": "value",
+            "Repeat": "value"
+        }
+    ],
+    "TC": [],
+    "TR": [],
+    "CL": [],
+    "CC": [],
+    "CR": [],
+    "BL": [],
+    "BC": [],
+    "BR": [],
+    "Marquee": {
+        "Text": "value",
+        "Background": "value",
+        "FontColor": "value"
+    }
+}
