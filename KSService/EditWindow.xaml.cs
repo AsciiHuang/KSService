@@ -330,7 +330,7 @@ namespace KSService
             Nullable<bool> result = dlg.ShowDialog();
             if (true == result)
             {
-                JObject obj = model.GetJSONObject();
+                JObject obj = model.GetJSONObject(type);
                 String objValue = obj.ToString();
                 RC4 rc4Obj = new RC4("a555ab555bc555cd555d");
                 System.IO.FileStream fs = (System.IO.FileStream) dlg.OpenFile();

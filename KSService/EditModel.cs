@@ -128,9 +128,9 @@ namespace KSService
                 List<MediaData> currentItems = getCurrentItems();
                 if (currentIndex != -1 && currentItems != null && currentItems.Count > currentIndex)
                 {
-                    currentItems[currentIndex].Path = path;
                     itemsSource[currentIndex].Path = path;
-                    itemsSource[currentIndex].InternalPath = internalPath;
+                    currentItems[currentIndex].Path = path;
+                    currentItems[currentIndex].InternalPath = internalPath;
                     NotifyPropertyChanged("ItemsSource");
                 }
             }
@@ -175,9 +175,11 @@ namespace KSService
             MarqueeItem.Background = color;
         }
 
-        public JObject GetJSONObject()
+        public JObject GetJSONObject(Constants.LayoutType type)
         {
             JObject resObj = new JObject();
+
+            resObj.Add("Type", type.ToString());
 
             JArray tlArray = getMediaDataJSONArray(tLItems);
             JArray tcArray = getMediaDataJSONArray(tCItems);
@@ -215,16 +217,26 @@ namespace KSService
 
             foreach (MediaData data in datas)
             {
-                if (!String.IsNullOrEmpty(data.Path))
+                JObject dataObj = new JObject();
+                dataObj.Add("Type", data.Type.ToString());
+                String pathValue = "";
+                if (data.Type == Constants.MediaType.None)
                 {
-                    JObject dataObj = new JObject();
-                    dataObj.Add("Type", data.Type.ToString());
-                    dataObj.Add("Path", data.Path.ToString());
-                    dataObj.Add("InternalPath", data.InternalPath.ToString());
-                    dataObj.Add("Duration", data.Duration.ToString());
-                    dataObj.Add("Repeat", data.Repeat.ToString());
-                    resArray.Add(dataObj);
+                    pathValue = String.Empty;
                 }
+                else if (String.IsNullOrEmpty(data.InternalPath))
+                {
+                    pathValue = String.Empty;
+                }
+                else
+                {
+                    pathValue = data.Path.ToString();
+                }
+                dataObj.Add("Path", pathValue);
+                dataObj.Add("InternalPath", data.InternalPath.ToString());
+                dataObj.Add("Duration", data.Duration.ToString());
+                dataObj.Add("Repeat", data.Repeat.ToString());
+                resArray.Add(dataObj);
             }
 
             return resArray;
