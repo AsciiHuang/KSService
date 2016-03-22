@@ -337,7 +337,7 @@ namespace KSService
                 byte[] data = getBytes(objValue);
                 rc4Obj.EncryptInPlace(data);
                 byte[] encData = getBytes(Convert.ToBase64String(data));
-                fs.Write(encData, 0, data.Length);
+                fs.Write(encData, 0, encData.Length);
                 fs.Close();
             }
         }
