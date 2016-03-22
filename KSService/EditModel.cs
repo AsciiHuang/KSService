@@ -148,18 +148,6 @@ namespace KSService
             }
         }
 
-        public void UpdateMediaRepeat(Constants.MediaRepeat repeat)
-        {
-            if (currentIndex != -1)
-            {
-                List<MediaData> currentItems = getCurrentItems();
-                if (currentIndex != -1 && currentItems != null && currentItems.Count > currentIndex)
-                {
-                    currentItems[currentIndex].Repeat = repeat;
-                }
-            }
-        }
-
         public void UpdateMarequeeData(String content)
         {
             MarqueeItem.Content = content;
@@ -235,7 +223,6 @@ namespace KSService
                 dataObj.Add("Path", pathValue);
                 dataObj.Add("InternalPath", data.InternalPath.ToString());
                 dataObj.Add("Duration", data.Duration.ToString());
-                dataObj.Add("Repeat", data.Repeat.ToString());
                 resArray.Add(dataObj);
             }
 

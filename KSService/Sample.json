@@ -6,14 +6,12 @@
             "Path": "value",
             "InternalPath": "value",
             "Duration": "value",
-            "Repeat": "value"
         },
         {
             "Type": "value",
             "Path": "value",
             "InternalPath": "value",
             "Duration": "value",
-            "Repeat": "value"
         }
     ],
     "TC": [],

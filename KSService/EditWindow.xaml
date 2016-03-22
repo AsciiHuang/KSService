@@ -422,15 +422,6 @@
                     <ComboBoxItem>60 秒</ComboBoxItem>
                     <ComboBoxItem>無限</ComboBoxItem>
                 </ComboBox>
-                <TextBlock Text="重播次數" Margin="0,10,0,0"/>
-                <ComboBox x:Name="combo_repeat" SelectionChanged="OnMediaRepeatComboBoxSelectionChanged">
-                    <ComboBoxItem>1 次</ComboBoxItem>
-                    <ComboBoxItem>2 次</ComboBoxItem>
-                    <ComboBoxItem>3 次</ComboBoxItem>
-                    <ComboBoxItem>4 次</ComboBoxItem>
-                    <ComboBoxItem>5 次</ComboBoxItem>
-                    <ComboBoxItem>無限</ComboBoxItem>
-                </ComboBox>
             </StackPanel>
             <StackPanel Grid.Column="2" Orientation="Vertical">
                 <Button Content="新增" Padding="10" Margin="10" Click="OnAddButtonClicked"/>

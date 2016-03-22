@@ -227,37 +227,6 @@ namespace KSService
             }
         }
 
-        private void OnMediaRepeatComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int index = ((ComboBox)sender).SelectedIndex;
-            Constants.MediaRepeat repeat = Constants.MediaRepeat.None;
-            switch (index)
-            {
-                case 0:
-                    repeat = Constants.MediaRepeat.Repeat1;
-                    break;
-                case 1:
-                    repeat = Constants.MediaRepeat.Repeat2;
-                    break;
-                case 2:
-                    repeat = Constants.MediaRepeat.Repeat3;
-                    break;
-                case 3:
-                    repeat = Constants.MediaRepeat.Repeat4;
-                    break;
-                case 4:
-                    repeat = Constants.MediaRepeat.Repeat5;
-                    break;
-                case 5:
-                    repeat = Constants.MediaRepeat.Unlimited;
-                    break;
-            }
-            if (repeat != Constants.MediaRepeat.None)
-            {
-                model.UpdateMediaRepeat(repeat);
-            }
-        }
-
         private void OnTextColorComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = ((ComboBox)sender).SelectedIndex;
@@ -352,7 +321,6 @@ namespace KSService
         {
             combo_type.SelectedIndex = -1;
             combo_duration.SelectedIndex = -1;
-            combo_repeat.SelectedIndex = -1;
 
             MediaData data = model.GetCurrentMediaData();
             if (data != null)
@@ -420,33 +388,6 @@ namespace KSService
                 else if (data.Duration == Constants.MediaDuration.Unlimited)
                 {
                     combo_duration.SelectedIndex = 12;
-                }
-                #endregion
-
-                #region Repeat
-                if (data.Repeat == Constants.MediaRepeat.Repeat1)
-                {
-                    combo_repeat.SelectedIndex = 0;
-                }
-                else if (data.Repeat == Constants.MediaRepeat.Repeat2)
-                {
-                    combo_repeat.SelectedIndex = 1;
-                }
-                else if (data.Repeat == Constants.MediaRepeat.Repeat3)
-                {
-                    combo_repeat.SelectedIndex = 2;
-                }
-                else if (data.Repeat == Constants.MediaRepeat.Repeat4)
-                {
-                    combo_repeat.SelectedIndex = 3;
-                }
-                else if (data.Repeat == Constants.MediaRepeat.Repeat5)
-                {
-                    combo_repeat.SelectedIndex = 4;
-                }
-                else if (data.Repeat == Constants.MediaRepeat.Unlimited)
-                {
-                    combo_repeat.SelectedIndex = 5;
                 }
                 #endregion
             }
