@@ -21,7 +21,6 @@
                     <TextBlock Grid.Row="0" VerticalAlignment="Center" 
                                            TextAlignment="Center"
                                            FontSize="20" 
-                                            
                                            Foreground="white"
                                            Padding="5"/>
                 </Button>
