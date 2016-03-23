@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("KSService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("KSService")]
 [assembly: AssemblyProduct("KSService")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
