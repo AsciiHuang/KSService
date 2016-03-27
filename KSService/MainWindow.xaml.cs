@@ -23,6 +23,7 @@ namespace KSService
         public MainWindow()
         {
             InitializeComponent();
+            ksmessage.Text = "本軟體版權屬於康順電子科技有限公司所有\n未經同意於非本公司機台上使用恕不負責任何服務\n本公司並持有法律追溯權";
         }
 
         public void OnLandscapeItemSelected(object sender, MouseButtonEventArgs e)
